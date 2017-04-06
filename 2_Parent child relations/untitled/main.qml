@@ -1,5 +1,6 @@
 import QtQuick 2.6
 import QtQuick.Window 2.2
+import QtQuick.Controls 1.4 //Slider
 
 Window {
     visible: true
@@ -7,6 +8,20 @@ Window {
     height: 1000
     //color: "red"
     title: qsTr("Practice Rectangle & anchors")
+
+    Slider {
+        id: slide
+        width: parent.width
+        anchors.top: parent
+        maximumValue: 360
+        minimumValue: 0
+        value: minimumValue
+
+        onValueChanged: {
+            yellowBox.rotation = slide.value
+        }
+    }
+
     Rectangle {
         width: 500
         height: 500
@@ -87,12 +102,12 @@ Window {
             anchors.centerIn: yellowBox
         }
 
-        MouseArea {
-            anchors.fill: parent //This area mouse can active
-            onClicked: {
-                parent.width = parent.width / 2
-                parent.height = parent.height / 2
-            }
-        }
+//        MouseArea {
+//            anchors.fill: parent //This area mouse can active
+//            onClicked: {
+//                parent.width = parent.width / 2
+//                parent.height = parent.height / 2
+//            }
+//        }
     }
 }
