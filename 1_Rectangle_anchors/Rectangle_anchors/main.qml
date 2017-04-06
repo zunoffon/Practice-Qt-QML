@@ -54,4 +54,11 @@ Window {
             right: yellowBox.left
         }
     }
+    RecRedBox {
+        id: recTopRight
+        anchors {
+            bottom: yellowBox.top
+            left: yellowBox.right
+        }
+    }
 }
