@@ -6,4 +6,6 @@ Rectangle{
     width: yellowBox.width / 4
     height: yellowBox.width / 4
     color: "red"
+    border.color: "blue"
+    border.width: parent.width / 100
 }
