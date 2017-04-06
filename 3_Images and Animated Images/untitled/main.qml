@@ -11,6 +11,7 @@ Window {
 
     Image {
         id: windowsBackground
+        opacity: 10
         width: 640
         height: 480
         source: "/../images/windows.jpg"
@@ -24,7 +25,7 @@ Window {
         y: 50
         source: "/../images/linux.gif"
     }
-
+    //Action: Rotate picture
     Button {
         property var countClicked: 0
         id: buttonToggle
@@ -37,6 +38,22 @@ Window {
             console.log("countClicked = ", countClicked);
             countClicked ++;
             countClicked % 2 == 0 ? linuxGif.rotation = 0 : linuxGif.rotation = 180;
+        }
+    }
+    //Action: Change opacity
+    Slider {
+        id: slideChangeOpacity
+        width: 100
+        maximumValue: 1
+        minimumValue: 0
+        value: maximumValue
+        stepSize: 0.1
+        x: 500
+        y: 380
+        onValueChanged: {
+            console.log("slide value = ", slideChangeOpacity.value)
+            //yellowBox.rotation = slide.value
+            windowsBackground.opacity = slideChangeOpacity.value
         }
     }
 }
